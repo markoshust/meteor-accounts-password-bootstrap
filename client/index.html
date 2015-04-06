@@ -1,0 +1,56 @@
+<body>
+    <div id="auth">
+        {{#if currentUser}}
+            {{> loggedIn}}
+        {{else}}
+            {{> auth}}
+        {{/if}}
+    </div>
+</body>
+
+<template name="loggedIn">
+    <div id="logged-in">
+        <p>You are logged in. <a class="logout">Logout</a></p>
+    </div>
+</template>
+
+<template name="auth">
+    <h2><a class="show-login">Login</a></h2>
+    {{#if showLogin}}{{> login}}{{/if}}
+    <h2><a class="show-register">Register</a></h2>
+    {{#if showRegister}}{{> register}}{{/if}}
+    {{#if showForgotPassword}}{{> forgotPassword}}{{/if}}
+</template>
+
+<template name="login">
+    <div class="login">
+        <form method="post">
+            <input type="email" name="email" placeholder="email">
+            <input type="password" name="password" placeholder="password">
+            <input type="submit" value="Login">
+            <p class="error">{{loginError}}</p>
+            <a class="forgot-password">Forgot Password</a>
+        </form>
+    </div>
+</template>
+
+<template name="register">
+    <div class="register">
+        <form method="post">
+            <input type="email" name="email" placeholder="email">
+            <input type="password" name="password" placeholder="password">
+            <input type="password" name="confirm" placeholder="confirm password">
+            <input type="submit" value="Register">
+            <p class="error">{{registerError}}</p>
+        </form>
+    </div>
+</template>
+
+<template name="forgotPassword">
+    <h2><a class="forgot-password-back">Forgot Password</a></h2>
+    <form method="post">
+        <input type="email" name="email" placeholder="email">
+        <input type="submit" value="Submit">
+        <p class="error">{{forgotPasswordError}}</p>
+    </form>
+</template>

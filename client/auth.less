@@ -1,0 +1,40 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+body {
+  font-family: Montserrat, sans-serif;
+}
+
+a {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
+#auth {
+  text-align: center;
+  input {
+    text-align: center;
+    clear: both;
+    display: block;
+    font-size: 1.1em;
+    padding: 5px;
+    margin: 5px auto;
+    &[type="submit"] {
+      font-size: 1.5em;
+      background: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  }
+  form {
+    width: 220px;
+    margin: 0 auto;
+  }
+  .error {
+    color: red;
+  }
+}
